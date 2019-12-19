@@ -52,13 +52,14 @@ function App() {
     });
     setMember(tempMemb)
     setEdit(false)
-
+    setMemb({ name: "", email: "", role: "" })
 
   } else {
     addNewMember(memb);
+    setMemb({ name: "", email: "", role: "" })
   }
 
-  setMemb('')
+    setMemb({ name: "", email: "", role: "" })
   }
 
 
