@@ -1,28 +1,18 @@
 import React, { useState } from 'react'
 
 const MemberForm = props => {
-  const [memb, setMemb] = useState({ name: "", email: "", role: "" });
-
-const handleChanges = e => {
-  setMemb({...memb, [e.target.name]: e.target.value})
-}
-
-const submitForm = e => {
-  e.preventDefault();
-  props.addNewMember(memb);
-  setMemb({ name: "", email: "", role: "" })
-}
+  // memb = { memb } submitForm = { submitForm } handleChanges = { handleChanges }
 
   return (
-    <form onSubmit={submitForm}>
+    <form onSubmit={props.submitForm}>
       <label htmlFor="name">Name</label>
-      <input id='name 'type="text" name='name' value={memb.name} onChange={handleChanges}/>
+      <input id='name 'type="text" name='name' value={props.memb.name} onChange={props.handleChanges}/>
 
       <label htmlFor="email">Email</label>
-      <input id='email' type="email" name='email' value={memb.email} onChange={handleChanges}/>
+      <input id='email' type="email" name='email' value={props.memb.email} onChange={props.handleChanges}/>
 
       <label htmlFor="role">What is your role?</label>
-      <select id='role' name="role" id="" value={memb.role} onChange={handleChanges}>
+      <select id='role' name="role" id="" value={props.memb.role} onChange={props.handleChanges}>
         <option value="Frontend">Front-End Engineer</option>
         <option value="Backend">Back-End Engineer</option>
         <option default value="Janitor">Janitor</option>

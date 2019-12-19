@@ -8,6 +8,7 @@ const Member = props => {
           <h2>{mem.name}</h2>
           <p>{mem.email}</p>
           <p>{mem.role}</p>
+          <button className='edit-btn' aria-label='edit button' onClick={() => props.handleEdit(mem.id)}>Edit</button>
         </div>
       ))}
     </>
@@ -15,3 +16,5 @@ const Member = props => {
 };
 
 export default Member;
+
+
